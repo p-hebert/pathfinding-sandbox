@@ -1,23 +1,27 @@
 # Pathfinding Sandbox Demo
+## Build
 
-## Quick Start
+Requirements:
+- CMake ≥ 3.25
+- Ninja
+- C++20 compiler
 
 ```bash
+git clone https://github.com/p-hebert/pathfinding-sandbox
+cd pathfinding-sandbox
+
 cmake --preset debug
 cmake --build --preset debug
+```
+
+## Run
+
+```bash
 ./build/debug/pathfinding_sandbox
 ```
 
-## Build environment setup
-
-### MacOS
+## Run tests
 
 ```bash
-xcode-select --install
-brew install cmake ninja
-
-# Symlink clang-format, clang-tidy directly
-# Avoids exporting LLVM in PATH, which would override the Apple-provided LLVM.
-ln -s /opt/homebrew/opt/llvm/bin/clang-format /opt/homebrew/bin/clang-format
-ln -s /opt/homebrew/opt/llvm/bin/clang-tidy /opt/homebrew/bin/clang-tidy
+ctest --test-dir build/debug
 ```
