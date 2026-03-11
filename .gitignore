@@ -51,7 +51,6 @@ CMakeCache.txt
 CMakeFiles
 CMakeScripts
 Testing
-Makefile
 cmake_install.cmake
 install_manifest.txt
 compile_commands.json
@@ -61,3 +60,8 @@ CMakeUserPresets.json
 
 # MacOS
 .DS_store
+
+# VS Code
+/.vscode/*
+!/.vscode/
+!/.vscode/settings.template.json
