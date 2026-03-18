@@ -1,9 +1,10 @@
-# Pathfinding Sandbox Demo
+# Pathfinding Sandbox Demo [WIP]
+
+![Initial UI](docs/screenshot.png)
 
 A small sandbox project for experimenting with pathfinding and navigation systems in C++.
 
 The project uses **CMake as the authoritative build system**, with a lightweight **Makefile providing developer convenience commands**.
-
 
 
 # Requirements
@@ -53,8 +54,7 @@ make run
 make test
 ```
 
-Tests are executed through **CTest**, which is integrated with the CMake configuration.
-
+Tests use GoogleTest and are integrated through CTest in the CMake configuration.
 
 
 # Developer Commands

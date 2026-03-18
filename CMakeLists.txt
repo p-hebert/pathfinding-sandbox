@@ -12,9 +12,13 @@ include(CTest)
 include(FetchContent)
 
 # DEPENDENCIES.MAIN
+FetchContent_Declare(
+    ftxui
+    GIT_REPOSITORY https://github.com/ArthurSonzogni/ftxui
+    GIT_TAG v6.1.9
+)
 
 # DEPENDENCIES.DEV
-
 # DEPENDENCIES.TEST
 FetchContent_Declare(
     googletest
@@ -23,6 +27,30 @@ FetchContent_Declare(
 )
 
 # BUILD --------------------------------------------------------------------------------------------
+
+# BUILD.UI
+FetchContent_MakeAvailable(ftxui)
+
+add_library(pathfinding_ui
+    src/ui/ui.cpp
+)
+
+target_link_libraries(pathfinding_ui
+  PRIVATE 
+    ftxui::screen
+    ftxui::dom
+    ftxui::component
+)
+
+add_executable(pathfinding_ui_ex
+    src/ui/main.cpp
+)
+
+target_link_libraries(pathfinding_ui_ex
+    PRIVATE
+        pathfinding_ui
+)
+
 # BUILD.MAIN
 add_library(pathfinding_core
     src/app.cpp
